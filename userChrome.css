@@ -884,3 +884,14 @@ label.found-matches {
 tab-split-view-wrapper {
     --tab-max-width: 300px!important;
 }
+
+
+/* ==========================================================================
+   TASKBAR TABS — "Pin to taskbar" PWA-like windows.
+   These use html[id^="taskbartab"] instead of #main-window.
+   Hide the navbar entirely for a clean app-like experience.
+   ========================================================================== */
+
+html[id^="taskbartab"] #urlbar-container {
+  display: none !important;
+}
