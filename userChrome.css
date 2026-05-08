@@ -481,6 +481,10 @@ browser[type="content"],
    in CONFIG for multiple buttons (36px per button).
    ========================================================================== */
 
+#TabsToolbar-customization-target > toolbaritem {
+  margin-inline-start: var(--uc-drag-space) !important;
+}
+
 @media (min-width: 1000px) {
   #TabsToolbar-customization-target > toolbaritem {
     margin-inline-start: auto !important;
