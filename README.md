@@ -15,6 +15,7 @@ One-line layout. Clean URL bar. Hover-reveal icons. Gruvbox colors. Nothing else
 
 <br>
 
+And this time: Dynamic toolbar support - add your extension icon to the right side without breaking the layout
 
 </div>
 
