@@ -22,5 +22,5 @@ One-line layout. Clean URL bar. Hover-reveal icons. Gruvbox colors. Nothing else
 ---
  
 **[Installation](docs/installation.md) & [Customisation](docs/customisation.md)** |
-Based on and inspired by Andreas Grafens's [Cascade](https://github.com/andreasgrafen/cascade) & biglavis' [LittleFox](https://github.com/biglavis/LittleFox) |
+Based on and inspired by Andreas Grafen's [Cascade](https://github.com/andreasgrafen/cascade) & biglavis' [LittleFox](https://github.com/biglavis/LittleFox) |
 License: [MIT](LICENSE)
