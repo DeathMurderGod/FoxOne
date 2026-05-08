@@ -11,7 +11,7 @@ Want to see it in action? [Click here for gifs](https://github.com/Firnschnee/Fo
 
 <br>
 
-And this time: Dynamic toolbar support - add an extension icon right next to the Hamburger Menu without breaking the layout
+And this time: Dynamic toolbar support - add an extension icon of your choice right next to the Hamburger Menu 
 
 </div>
 
