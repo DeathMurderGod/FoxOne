@@ -4,6 +4,7 @@
 **A minimalist one-line Firefox theme.**
 
 <img width="1920" height="1080" alt="326_1x_shots_so" src="https://github.com/user-attachments/assets/8504840c-3126-4f36-899a-0c9429a50efd" />
+<br>
 
 One-line layout. Clean URL bar. Hover-reveal icons. Gruvbox colors. Nothing else.
 
