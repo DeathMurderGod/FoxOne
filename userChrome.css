@@ -13,6 +13,13 @@
    ========================================================================== */
 
 :root {
+  /* Color palette — change these five values to retheme FoxOne */
+  --uc-color-base:    #282828;   /* main background (toolbar, frame) */
+  --uc-color-surface: #3c3836;   /* elevated surfaces (panels, popups) */
+  --uc-color-accent:  #fabd2f;   /* accent color (active tab, focus ring) */
+  --uc-color-text:    #FFFFFF;   /* primary text */
+  --uc-color-hover:   #7c6f64;   /* hover / highlight backgrounds */
+
   /* Global Border Radius — applied to all UI elements */
   --uc-border-radius: 8px;
 
@@ -85,8 +92,8 @@
   --match-diacritics-position: 2;
   --whole-words-position:      3;
 
-  /* URL bar background (#282828 = blends with toolbar, #3c3836 = distinct, #252829 = old darker style) */
-  --uc-urlbar-background: #282828;
+  /* URL bar background (base = blends with toolbar, surface = distinct) */
+  --uc-urlbar-background: var(--uc-color-base);
 
   /* Rounded corners on URL bar and findbar (1 = rounded, 0 = square) */
   --uc-urlbar-rounded: 0;
@@ -114,55 +121,55 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Frame & toolbar */
-    --lwt-accent-color: #282828 !important;
-    --toolbar-bgcolor: #282828 !important;
-    --toolbar-color: #FFFFFF !important;
-    --lwt-text-color: #FFFFFF !important;
+    --lwt-accent-color: var(--uc-color-base) !important;
+    --toolbar-bgcolor: var(--uc-color-base) !important;
+    --toolbar-color: var(--uc-color-text) !important;
+    --lwt-text-color: var(--uc-color-text) !important;
 
     /* Tabs */
-    --uc-highlight-colour: #282828;
-    --lwt-tab-line-color: #fabd2f !important;
-    --tab-selected-textcolor: #fabd2f !important;
+    --uc-highlight-colour: var(--uc-color-base);
+    --lwt-tab-line-color: var(--uc-color-accent) !important;
+    --tab-selected-textcolor: var(--uc-color-accent) !important;
 
     /* Icons */
-    --lwt-toolbarbutton-icon-fill-attention: #fabd2f !important;
-    --toolbarbutton-icon-fill-attention: #fabd2f !important;
+    --lwt-toolbarbutton-icon-fill-attention: var(--uc-color-accent) !important;
+    --toolbarbutton-icon-fill-attention: var(--uc-color-accent) !important;
 
     /* URL bar */
     --toolbar-field-background-color: var(--uc-urlbar-background) !important;
-    --toolbar-field-color: #FFFFFF !important;
-    --toolbar-field-focus-color: #FFFFFF !important;
-    --toolbar-field-focus-border-color: #fabd2f !important;
-    --toolbar-field-focus-background-color: #3c3836 !important;
+    --toolbar-field-color: var(--uc-color-text) !important;
+    --toolbar-field-focus-color: var(--uc-color-text) !important;
+    --toolbar-field-focus-border-color: var(--uc-color-accent) !important;
+    --toolbar-field-focus-background-color: var(--uc-color-surface) !important;
 
     /* Popups & panels */
-    --arrowpanel-background: #3c3836 !important;
-    --arrowpanel-color: #FFFFFF !important;
-    --arrowpanel-border-color: #282828 !important;
-    --panel-item-hover-bgcolor: #7c6f64 !important;
+    --arrowpanel-background: var(--uc-color-surface) !important;
+    --arrowpanel-color: var(--uc-color-text) !important;
+    --arrowpanel-border-color: var(--uc-color-base) !important;
+    --panel-item-hover-bgcolor: var(--uc-color-hover) !important;
 
     /* Sidebar */
-    --lwt-sidebar-background-color: #282828 !important;
-    --lwt-sidebar-text-color: #FFFFFF !important;
-    --lwt-sidebar-border-color: #3c3836 !important;
-    --sidebar-highlight-background-color: #7c6f64 !important;
+    --lwt-sidebar-background-color: var(--uc-color-base) !important;
+    --lwt-sidebar-text-color: var(--uc-color-text) !important;
+    --lwt-sidebar-border-color: var(--uc-color-surface) !important;
+    --sidebar-highlight-background-color: var(--uc-color-hover) !important;
   }
 
   #navigator-toolbox {
-    background: #282828 !important;
+    background: var(--uc-color-base) !important;
   }
 
   /* Selected tab text */
   .tabbrowser-tab[selected] {
-    color: #fabd2f !important;
+    color: var(--uc-color-accent) !important;
   }
 
-  /* URL bar results — Gruvbox-tinted selection highlight (full row) */
+  /* URL bar results — accent-tinted selection highlight (full row) */
   .urlbarView-row[selected] {
-    background: rgba(250, 189, 47, 0.15) !important;
+    background: color-mix(in srgb, var(--uc-color-accent) 15%, transparent) !important;
   }
   .urlbarView-row[selected] > .urlbarView-row-inner {
-    color: #FFFFFF !important;
+    color: var(--uc-color-text) !important;
     background: transparent !important;
   }
 }
@@ -420,7 +427,7 @@ sidebar-main,
 .urlbarView-button-result-menu:hover,
 .urlbarView-button-menu:hover,
 .urlbarView-row:hover .urlbarView-button-result-menu:hover {
-  fill: #fabd2f !important;
+  fill: var(--uc-color-accent) !important;
 }
 
 .urlbar-icon,
@@ -515,7 +522,7 @@ sidebar-main,
 /* splitter between content and sidebar — thin 2px line, still draggable */
 #sidebar-splitter {
   border: none !important;
-  background: #282828 !important;
+  background: var(--uc-color-base) !important;
   appearance: none !important;
   width: 2px !important;
   min-width: 2px !important;
@@ -1102,7 +1109,7 @@ tab-split-view-wrapper {
 
 .split-view-splitter {
   border: none !important;
-  background: #282828 !important;
+  background: var(--uc-color-base) !important;
   appearance: none !important;
   width: 2px !important;
   min-width: 2px !important;
