@@ -107,8 +107,8 @@
   /* Tab loading progress bar (1 = show, 0 = hide) */
   --uc-show-loading-progress: 0;
 
-  /* Navigation buttons — auto-hide with hover reveal (1 = hide, 0 = always show) */
-  --uc-autohide-nav-buttons: 0;
+  /* Navigation buttons — auto-hide with hover reveal (0 = always show, 1 = reveal with hover and focus, 2 = reveal with hover) */
+  --uc-autohide-nav-buttons: 2;
 
   /* Active tab highlight (combine or use individually)
    * Background: set a hex color to enable (e.g. #3c3836), transparent = off
@@ -647,14 +647,13 @@ browser[type="content"],
    HIDDEN ELEMENTS
    ========================================================================== */
 
-/* Navigation buttons — auto-hide with hover reveal (1 = hide, 0 = always show) */
+/* Navigation buttons — auto-hide with hover reveal */
 #nav-bar {
   container-type: inline-size style;
 }
 
-/* Only apply when enabled */
-@container style(--uc-autohide-nav-buttons: 1) {
-
+/* Mode 1 and 2 apply hidden state */
+@container style(--uc-autohide-nav-buttons: 1), style(--uc-autohide-nav-buttons: 2) {
   #back-button,
   #forward-button,
   #reload-button,
@@ -668,13 +667,21 @@ browser[type="content"],
     overflow: hidden !important;
     transition: all 0.2s ease !important;
   }
-
+  /* Hover reveal applies to both modes */
   #nav-bar:hover :is(
     #back-button,
     #forward-button,
     #reload-button,
     #stop-reload-button
-  ),
+  ) {
+    opacity: 1 !important;
+    max-width: 32px !important;
+    width: 32px !important;
+  }
+}
+
+/* Mode 1 also reveals on focus */
+@container style(--uc-autohide-nav-buttons: 1) {
   #nav-bar:focus-within :is(
     #back-button,
     #forward-button,
